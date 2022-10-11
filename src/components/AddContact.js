@@ -1,5 +1,5 @@
 import React from "react";
-
+// import { Link } from "react-router-dom";
 class AddContact extends React.Component {
   state = {
     name: "",
@@ -8,14 +8,13 @@ class AddContact extends React.Component {
 
   add = (e) => {
     e.preventDefault();
-    if(this.state.name === "" || this.state.email === ""){
-      alert("All the fields are mandatory!!");
+    if (this.state.name === "" || this.state.email === "") {
+      alert("ALl the fields are mandatory!");
       return;
     }
     this.props.addContactHandler(this.state);
-    this.setState({ name:"", email: ""});
-    console.log(this.state)
-  }
+    this.setState({ name: "", email: "" });
+  };
   render() {
     return (
       <div className="ui main">
@@ -28,8 +27,7 @@ class AddContact extends React.Component {
               name="name"
               placeholder="Name"
               value={this.state.name}
-              onChange=
-              {(e) => this.setState({ name: e.target.value })}
+              onChange={(e) => this.setState({ name: e.target.value })}
             />
           </div>
           <div className="field">
@@ -43,6 +41,7 @@ class AddContact extends React.Component {
             />
           </div>
           <button className="ui button blue">Add</button>
+          
         </form>
       </div>
     );
